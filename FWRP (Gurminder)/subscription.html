@@ -1,0 +1,171 @@
+<!-- Gurminder Singh Badwal -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Surplus Food Alerts</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!-- Internal Styles -->
+    <style>
+        /* Google Fonts */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+        /* CSS Variables */
+        :root {
+            --white-color: hsl(0, 0%, 100%);
+            --black-color: hsl(0, 0%, 0%);
+            --body-font: "Poppins", sans-serif;
+            --h1-font-size: 2rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .813rem;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body, input, button {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Subscribe Styles */
+        .subscribe {
+            position: relative;
+            height: 100vh;
+            display: grid;
+            align-items: center;
+        }
+
+        .subscribe__bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .subscribe__form {
+            position: relative;
+            margin-inline: 1.5rem;
+            background-color: hsla(0, 0%, 100%, .01);
+            border: 2px solid hsla(0, 0%, 100%, .7);
+            padding: 2.5rem 1rem;
+            color: var(--white-color);
+            border-radius: 1rem;
+            backdrop-filter: blur(16px);
+        }
+
+        .subscribe__title {
+            text-align: center;
+            font-size: var(--h1-font-size);
+            margin-bottom: 1.25rem;
+        }
+
+        .subscribe__inputs, .subscribe__box {
+            display: grid;
+        }
+
+        .subscribe__inputs {
+            row-gap: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .subscribe__box {
+            grid-template-columns: 1fr max-content;
+            column-gap: .75rem;
+            align-items: center;
+            border: 2px solid hsla(0, 0%, 100%, .7);
+            padding-inline: 1.25rem;
+            border-radius: 4rem;
+        }
+
+        .subscribe__input, .subscribe__button {
+            border: none;
+            outline: none;
+        }
+
+        .subscribe__input {
+            width: 100%;
+            background: none;
+            color: var(--white-color);
+            padding-block: 1rem;
+        }
+
+        .subscribe__input::placeholder {
+            color: var(--white-color);
+        }
+
+        .subscribe__box i {
+            font-size: 1.25rem;
+        }
+
+        .subscribe__button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: var(--white-color);
+            border-radius: 4rem;
+            color: var(--black-color);
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* For medium devices */
+        @media screen and (min-width: 576px) {
+            .subscribe {
+                justify-content: center;
+            }
+            .subscribe__form {
+                width: 420px;
+                padding-inline: 2.5rem;
+            }
+            .subscribe__title {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="subscribe">
+        <img src="bg.png" alt="image" class="subscribe__bg">
+        <form action="SubscribeServlet" method="post" class="subscribe__form">
+            <h1 class="subscribe__title">Subscribe to Surplus Food Alerts</h1>
+            <div class="subscribe__inputs">
+                <div class="subscribe__box">
+                    <input type="email" name="email" placeholder="Email" required class="subscribe__input">
+                    <i class="ri-mail-fill"></i>
+                </div>
+                <div class="subscribe__box">
+                    <input type="text" name="location" placeholder="Location" required class="subscribe__input">
+                    <i class="ri-map-pin-line"></i>
+                </div>
+                <div class="subscribe__box">
+                    <input type="text" name="phoneNumber" placeholder="Phone Number" required class="subscribe__input">
+                    <i class="ri-phone-fill"></i>
+                </div>
+            </div>
+            <button type="submit" class="subscribe__button">Subscribe</button>
+        </form>
+    </div>
+</body>
+</html>
